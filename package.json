@@ -1,0 +1,39 @@
+{
+  "name": "@kittylabs/eslint-config-kitty",
+  "version": "1.1.0",
+  "description": "Eslint config for KittySwap",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/kittylabsbsc/kitty-toolkit/tree/master/packages/eslint-config-kitty",
+  "license": "MIT",
+  "author": "RabbitDoge",
+  "private": false,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "jest",
+    "release": "yarn build && np"
+  },
+  "peerDependencies": {
+    "eslint": "^7.2.0",
+    "prettier": "^2.1.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
